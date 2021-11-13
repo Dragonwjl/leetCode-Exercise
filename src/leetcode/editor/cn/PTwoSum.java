@@ -45,6 +45,8 @@
 
 package leetcode.editor.cn;
 
+import java.util.HashMap;
+
 //Java：两数之和
 public class PTwoSum {
     public static void main(String[] args) {
@@ -55,6 +57,16 @@ public class PTwoSum {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[] twoSum(int[] nums, int target) {
+            HashMap<Integer, Integer> map = new HashMap<>();
+            for (int i = 0; i < nums.length; i++) {
+                int s = target - nums[i];
+                for (int j = i + 1; j < nums.length; j++) {
+                    if (nums[j] == s) {
+                        return new int[]{i, j};
+                    }
+                }
+
+            }
             return null;
         }
     }

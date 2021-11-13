@@ -47,6 +47,8 @@
 
 package leetcode.editor.cn;
 
+import sun.text.resources.cldr.ti.FormatData_ti;
+
 //Java：无重复字符的最长子串
 public class PLongestSubstringWithoutRepeatingCharacters {
     public static void main(String[] args) {
@@ -57,7 +59,18 @@ public class PLongestSubstringWithoutRepeatingCharacters {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int lengthOfLongestSubstring(String s) {
-            return 0;
+            int subString = 0;
+            StringBuffer sb = new StringBuffer();
+            for (int i = 0; i < s.length(); i++) {
+                String ss = String.valueOf(s.charAt(i));
+
+                if (sb.indexOf(ss) >= 0) {
+                    sb.delete(0, sb.indexOf(ss) + 1);
+                }
+                sb.append(ss);
+                subString = Math.max(sb.length(), subString);
+            }
+            return subString;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
