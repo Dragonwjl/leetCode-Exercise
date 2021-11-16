@@ -114,7 +114,7 @@ package leetcode.editor.cn;
 
 
 //Java：字符串转换整数 (atoi)
-public class PStringToIntegerAtoi {
+public class  PStringToIntegerAtoi {
     public static void main(String[] args) {
         Solution solution = new PStringToIntegerAtoi().new Solution();
         // TO TEST
